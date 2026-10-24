@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#210609">
+  <title>COBRA — Private Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="cobra-mark" aria-label="Cobra icon">𓆗</div><div><b>COBRA</b><small>PRIVATE SOCIAL</small></div></div>
+      <div class="user-card"><div id="myAvatar" class="avatar mini">C</div><div class="user-meta"><b id="myName">Guest</b><small id="connectionStatus">Not connected</small></div><button id="editAvatarBtn" class="icon-btn" title="Edit avatar">✦</button></div>
+      <button class="nav-item active" data-view="chats">▣ <span>Messages</span><span class="nav-count" id="chatCount">0</span></button>
+      <button class="nav-item" data-view="discover">⌕ <span>Find people</span></button>
+      <button class="nav-item" data-view="avatar">◉ <span>Avatar studio</span></button>
+      <div class="side-footer"><div class="online-dot"></div><span>Red room, real conversations.</span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">YOUR PRIVATE SPACE</div><h1 id="pageTitle">Messages</h1></div><button id="signOutBtn" class="quiet-btn hidden">Sign out on this device</button></header>
+      <section id="authView" class="auth-wrap">
+        <div class="auth-panel"><div class="cobra-big">𓆗</div><div class="eyebrow">WELCOME TO THE DEN</div><h2>Talk freely.<br><span>Stay unmistakably you.</span></h2><p>Create a username and password. No email or phone number required in this demo setup.</p>
+          <label>Username<input id="authUsername" maxlength="18" autocomplete="username" placeholder="e.g. nightcobra"></label>
+          <label>Password<input id="authPassword" type="password" minlength="6" autocomplete="current-password" placeholder="At least 6 characters"></label>
+          <div class="auth-actions"><button id="createBtn" class="primary-btn">Create account</button><button id="loginBtn" class="secondary-btn">Log in</button></div>
+          <p id="authMessage" class="form-message" aria-live="polite"></p>
+          <div class="demo-note">Use a unique password. This website does not ask for your real name.</div>
+        </div>
+        <div class="auth-art"><div class="rings"></div><div class="cobra-watermark">𓆗</div><div class="art-caption">YOUR PEOPLE.<br><b>YOUR WORLD.</b></div><div class="art-chip">COBRA / 001</div></div>
+      </section>
+      <section id="chatsView" class="content-view hidden">
+        <div class="panel-heading"><div><h2>Your conversations</h2><p>Pick a person to start a private chat.</p></div><button class="primary-btn small" id="newChatBtn">＋ New chat</button></div>
+        <div id="chatList" class="chat-list"><div class="empty-state"><div>𓆗</div><h3>Your den is quiet.</h3><p>Find someone by their exact username to start chatting.</p></div></div>
+      </section>
+      <section id="discoverView" class="content-view hidden">
+        <div class="panel-heading"><div><h2>Find people</h2><p>Search by username, not phone number.</p></div></div>
+        <div class="search-row"><span>⌕</span><input id="searchUsername" placeholder="Type an exact username"><button id="searchBtn" class="primary-btn small">Search</button></div>
+        <div id="searchResults" class="results"></div>
+        <div class="safety-note"><b>Stay smart online</b><p>Never share your address, school, passwords, or private photos with people you don't know. Block or report suspicious users.</p></div>
+      </section>
+      <section id="avatarView" class="content-view hidden">
+        <div class="panel-heading"><div><h2>Avatar studio</h2><p>Build your look. Thousands of combinations from mix-and-match styles.</p></div><button id="saveAvatarBtn" class="primary-btn small">Save look</button></div>
+        <div class="avatar-studio"><div class="avatar-preview-card"><div id="avatarPreview" class="avatar-large"><div class="avatar-head"></div><div class="avatar-body"></div><div class="avatar-legs"></div><div class="avatar-shoes"></div></div><h3 id="avatarLabel">Your Cobra look</h3><p>Express yourself, your way.</p></div><div class="avatar-controls" id="avatarControls"></div></div>
+      </section>
+      <section id="chatView" class="chat-view hidden">
+        <div class="chat-header"><button id="backChats" class="icon-btn">←</button><div id="chatAvatar" class="avatar">C</div><div class="chat-person"><b id="chatPersonName">Conversation</b><small>COBRA private chat</small></div><button id="blockBtn" class="quiet-btn">Block</button></div>
+        <div id="messages" class="messages"><div class="empty-state"><div>✦</div><p>Say hello.</p></div></div>
+        <form id="messageForm" class="message-form"><input id="messageInput" maxlength="1000" placeholder="Write a message…" autocomplete="off"><button class="send-btn" type="submit">➤</button></form>
+        <div class="chat-disclaimer">Be respectful. Messages are stored by the connected database.</div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+                                                         </html>
